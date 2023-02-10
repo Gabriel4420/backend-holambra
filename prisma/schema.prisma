@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model Prospect {
+  id        String    @id @default(uuid())
+  createdAt DateTime  @default(now())
+  email     String    @unique
+  document  String
+  name      String?
+  phone     String
+  adress    Address[]
+
+  @@map("prospects")
+}
+
+model Address {
+  id           String    @id @default(uuid())
+  country      String
+  state        String
+  district     String
+  street       String
+  city         String
+  numberStreet String
+  createdAt    DateTime  @default(now())
+  prospectId   String?
+  Prospect     Prospect? @relation(fields: [prospectId], references: [id])
+
+  @@index([prospectId])
+  @@map("addresses")
+}
