@@ -17,7 +17,7 @@
   </a>
 </p>
 
-<h2 align="center"> 📖 DOCUMENTAÇÃO BACKEND COIMBRA CHALLENGE 📖</h2>
+<h2 align="center"> 📖 DOCUMENTAÇÃO BACKEND HOLAMBRA CHALLENGE 📖</h2>
 
 <p>Olá boa tarde!! Tudo bem?</p>
 
